@@ -1,8 +1,8 @@
 /// tools ///
 import hi from 'tools/hi';
-import iffy from 'tools/iffy';
-import immutably from 'tools/immutably';
-import nullably from 'tools/nullably';
+// import iffy from 'tools/iffy';
+// import immutably from 'tools/immutably';
+// import nullably from 'tools/nullably';
 
 /// internal modules ///
 import initState from './init'
@@ -15,7 +15,7 @@ import { types } from './actions';
 ***************************************/
 
 const reducer = (state = initState, action) => {
-  ///>>> add any helper funs <<<///
+  const { type, data } = action;
 
   /// do it! ///
   try {

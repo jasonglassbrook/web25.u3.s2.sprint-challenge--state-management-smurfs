@@ -1,6 +1,6 @@
 import React from 'react';
 
 const context = React.createContext ();
-context.displayName = '_Context';
+context.displayName = 'SmurfsContext';
 
 export default context;

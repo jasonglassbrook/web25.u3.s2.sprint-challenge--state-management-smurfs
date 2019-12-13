@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import './styles/App.css';
 
 /// components ///
+import SmurfForm from 'components/SmurfForm';
 import SmurfsVillage from 'components/SmurfsVillage';
 
 /// states ///
@@ -92,6 +93,7 @@ class App extends React.Component {
           <p>Have fun!</p>
         </AppHead>
         <AppBody>
+          <SmurfForm/>
           <SmurfsVillage/>
         </AppBody>
       </AppContainer>

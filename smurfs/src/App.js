@@ -69,7 +69,7 @@ const mapDispatchToProps = {
   getVillage : actions.specials.getVillage
 };
 
-const connectApp = ReactRedux.connect (
+const connect = ReactRedux.connect (
   mapStateToProps, mapDispatchToProps,
 );
 
@@ -101,4 +101,4 @@ class App extends React.Component {
 
 /**************************************/
 
-export default connectApp (App);
+export default connect (App);

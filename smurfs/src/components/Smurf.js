@@ -39,14 +39,14 @@ const DataItem = styled.li `
 const DataItemKey = styled.span `
   margin: 2px;
   border-radius: 2px;
-  padding: 1px 4px;
+  padding: 4px;
   color: White;
 `
 
 const DataItemValue = styled.span `
   margin: 2px;
   border-radius: 2px;
-  padding: 1px 4px;
+  padding: 4px 8px;
   color: #4299E1;
   background: White;
 `

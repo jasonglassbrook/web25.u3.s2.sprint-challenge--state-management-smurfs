@@ -14,6 +14,12 @@ const Item = styled.li `
   padding: 4px;
   color: White;
   background: #4299E1;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 `;
 
 const DataList = styled.ul `

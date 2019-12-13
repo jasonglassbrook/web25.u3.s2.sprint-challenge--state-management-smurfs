@@ -6,20 +6,26 @@ import styled from 'styled-components'
   COMPONENTS
 ***************************************/
 
+const colors = {
+  'light' : 'White',
+  'smurf' : '#3182CE',
+  'mid-smurf' : '#90CDF4',
+}
+
 const Item = styled.li `
   flex: 1 0 auto;
   margin: 8px;
-  border: 1px solid White;
+  border: 1px solid ${colors['light']};
   border-radius: 8px;
   padding: 4px;
-  color: White;
-  background: #4299E1;
+  color: ${colors['light']};
+  background: ${colors['smurf']};
 
   display: flex;
   flex-flow: row nowrap;
   align-content: center;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
 `;
 
 const DataList = styled.ul `
@@ -33,28 +39,31 @@ const DataList = styled.ul `
 const Data = styled.li `
   flex: 1 0 auto;
   margin: 4px;
-  border: 1px solid White;
+  border: 1px solid ${colors['mid-smurf']};
   border-radius: 4px;
   padding: 2px;
-  color: White;
+  color: ${colors['light']};
 
   display: flex;
-  flex-flow: row-nowrap;
+  flex-flow: row nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 `;
 
 const DataLabel = styled.span `
   margin: 2px;
   border-radius: 2px;
   padding: 4px;
-  color: White;
+  color: ${colors['light']};
 `
 
 const DataValue = styled.span `
   margin: 2px;
   border-radius: 2px;
   padding: 4px 8px;
-  color: #4299E1;
-  background: White;
+  color: ${colors['smurf']};
+  background: ${colors['light']};
 `
 
 /***************************************

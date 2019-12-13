@@ -5,7 +5,15 @@
 ***************************************/
 
 const init = {
-  smurfs : [],
+  /// smurfs village ///
+  village : [],
+  isGettingVillage : false,
+
+  /// some smurf ///
+  smurf : {},
+  isAddingSmurf   : false,
+  isEditingSmurf  : false,
+  isDeletingSmurf : false,
 };
 
 /**************************************/

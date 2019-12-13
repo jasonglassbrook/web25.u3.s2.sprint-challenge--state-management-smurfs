@@ -20,10 +20,32 @@ const reducer = (state = initState, action) => {
   /// do it! ///
   try {
     /// actions ///
-    switch (action.type) {
-      case types.DO_SOMETHING :
-        hi.flag ('log', 'doing something');
-        return (state);
+    switch (type) {
+
+      case types.GET_VILLAGE_TRY:
+        hi.flag ('log', 'getting avatar : start...');
+        return {
+          ...state,
+          isGettingVillage : true,
+        };
+
+      case types.GET_VILLAGE_SUCCESS:
+        hi.flag ('log', 'getting avatar : success! ');
+        return {
+          ...state,
+          village : data,
+          isGettingVillage : false,
+          error : '',
+        };
+
+      case types.GET_VILLAGE_FAILURE:
+        hi.flag ('log', 'getting avatar : failure! ');
+        return {
+          ...state,
+          isGettingVillage : false,
+          error : data,
+        };
+
       // else
       default :
         hi.flag ('warn', 'action not defined');

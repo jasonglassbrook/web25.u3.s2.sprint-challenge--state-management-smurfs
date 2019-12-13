@@ -6,7 +6,7 @@
 
 const init = {
   /// smurfs village ///
-  village : [],
+  village : [{}],
   isGettingVillage : false,
 
   /// some smurf ///
@@ -14,6 +14,9 @@ const init = {
   isAddingSmurf   : false,
   isEditingSmurf  : false,
   isDeletingSmurf : false,
+
+  /// general status ///
+  error : '',
 };
 
 /**************************************/

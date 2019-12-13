@@ -37,7 +37,7 @@ const SmurfsList = styled.ul `
   align-items: center;
 `;
 
-const SmurfsVillage = ({ village = [{}], ...props }) => {
+const SmurfsVillage = ({ village = [{ id : (Date.now ()) }], ...props }) => {
   return (
     <Section className='SmurfsVillage'>
       <SectionHead>

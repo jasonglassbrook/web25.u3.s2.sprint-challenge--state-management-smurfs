@@ -11,8 +11,7 @@ const init = {
 
   /// some smurf ///
   smurf : {},
-  isAddingSmurf : false,
-  isEditingSmurf : false,
+  smurfMode : 'add',
   isPostingSmurf : false,
   isPuttingSmurf : false,
   isDeletingSmurf : false,

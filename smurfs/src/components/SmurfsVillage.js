@@ -1,9 +1,13 @@
 /// external modules ///
 import React from 'react';
+import * as ReactRedux from 'react-redux';
 import styled from 'styled-components';
 
 /// components ///
 import Smurf from './Smurf';
+
+/// states ///
+import { actions } from 'states/smurfs';
 
 /***************************************
   COMPONENTS
@@ -38,6 +42,20 @@ const SmurfsList = styled.ul `
 `;
 
 /***************************************
+  REDUX
+***************************************/
+
+const mapStateToProps = (state) => ({
+  village : state.village,
+});
+
+const mapDispatchToProps = {};
+
+const connect = ReactRedux.connect (
+  mapStateToProps, mapDispatchToProps,
+);
+
+/***************************************
   MAIN
 ***************************************/
 
@@ -60,4 +78,4 @@ const SmurfsVillage = ({ village = [{ id : (Date.now ()) }], ...props }) => {
 
 /**************************************/
 
-export default SmurfsVillage;
+export default connect (SmurfsVillage);

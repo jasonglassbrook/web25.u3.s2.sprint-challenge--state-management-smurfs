@@ -8,12 +8,12 @@ import styled from 'styled-components'
 
 const Item = styled.li `
   flex: 1 0 auto;
-  margin: 4px;
+  margin: 8px;
   border: 1px solid White;
   border-radius: 8px;
   padding: 4px;
   color: White;
-  background: DodgerBlue;
+  background: #4299E1;
 `;
 
 const DataList = styled.ul `
@@ -28,8 +28,8 @@ const DataItem = styled.li `
   flex: 1 0 auto;
   margin: 4px;
   border: 1px solid White;
-  border-radius: 8px;
-  padding: 4px;
+  border-radius: 4px;
+  padding: 2px;
   color: White;
 
   display: flex;
@@ -39,15 +39,15 @@ const DataItem = styled.li `
 const DataItemKey = styled.span `
   margin: 2px;
   border-radius: 2px;
-  padding: 2px;
+  padding: 1px 4px;
   color: White;
 `
 
 const DataItemValue = styled.span `
   margin: 2px;
   border-radius: 2px;
-  padding: 2px;
-  color: DodgerBlue;
+  padding: 1px 4px;
+  color: #4299E1;
   background: White;
 `
 

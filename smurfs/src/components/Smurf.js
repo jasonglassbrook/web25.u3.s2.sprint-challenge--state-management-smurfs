@@ -53,18 +53,12 @@ const DataItemValue = styled.span `
 const Smurf = ({ smurf = {}, props }) => {
   return (
     <Item className='Smurf'><DataList>
-      <DataItem>
-        <DataItemKey>name</DataItemKey>
-        <DataItemValue>{smurf.name}</DataItemValue>
-      </DataItem>
-      <DataItem>
-        <DataItemKey>age</DataItemKey>
-        <DataItemValue>{smurf.age}</DataItemValue>
-      </DataItem>
-      <DataItem>
-        <DataItemKey>height</DataItemKey>
-        <DataItemValue>{smurf.height}</DataItemValue>
-      </DataItem>
+      {['name', 'age', 'height'].map ((key) => (
+        <DataItem key={key}>
+          <DataItemKey>{key}</DataItemKey>
+          <DataItemValue>{smurf[key]}</DataItemValue>
+        </DataItem>
+      ))}
     </DataList></Item>
   );
 };

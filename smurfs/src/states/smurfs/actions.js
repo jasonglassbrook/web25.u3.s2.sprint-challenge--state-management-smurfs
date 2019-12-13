@@ -80,9 +80,9 @@ specials.getVillage = () => (dispatch /*, getState */) => {
 };
 
 /*------------------
-  addSmurf
+  postSmurf
 ------------------*/
-specials.addSmurf = () => (dispatch, getState) => {
+specials.postSmurf = () => (dispatch, getState) => {
   const { smurf } = getState ();
 
   dispatch (make (types.POST_SMURF_TRY, smurf));
@@ -99,9 +99,9 @@ specials.addSmurf = () => (dispatch, getState) => {
 };
 
 /*------------------
-  editSmurf
+  putSmurf
 ------------------*/
-specials.editSmurf = () => (dispatch, getState) => {
+specials.putSmurf = () => (dispatch, getState) => {
   const { smurf } = getState ();
 
   dispatch (make (types.PUT_SMURF_TRY, smurf));

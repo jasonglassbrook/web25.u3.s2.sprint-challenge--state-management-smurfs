@@ -22,15 +22,14 @@ const reducer = (state = initState, action) => {
     /// actions ///
     switch (type) {
 
+      /// GET_VILLAGE ///
       case types.GET_VILLAGE_TRY:
-        hi.flag ('log', 'getting avatar : start...');
         return {
           ...state,
           isGettingVillage : true,
         };
 
       case types.GET_VILLAGE_SUCCESS:
-        hi.flag ('log', 'getting avatar : success! ');
         return {
           ...state,
           village : data,
@@ -39,14 +38,13 @@ const reducer = (state = initState, action) => {
         };
 
       case types.GET_VILLAGE_FAILURE:
-        hi.flag ('log', 'getting avatar : failure! ');
         return {
           ...state,
           isGettingVillage : false,
           error : data,
         };
 
-      // else
+      /// else ///
       default :
         hi.flag ('warn', 'action not defined');
         console.log (action);

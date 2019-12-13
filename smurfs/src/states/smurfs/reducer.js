@@ -44,49 +44,49 @@ const reducer = (state = initState, action) => {
           error : data,
         };
 
-      /// ADD_SMURF ///
-      case types.ADD_SMURF_TRY:
+      /// POST_SMURF ///
+      case types.POST_SMURF_TRY:
         return {
           ...state,
           smurf : data,
-          isAddingSmurf : true,
+          isPostingSmurf : true,
         };
 
-      case types.ADD_SMURF_SUCCESS:
+      case types.POST_SMURF_SUCCESS:
         return {
           ...state,
           smurf : {}, // reset
-          isAddingSmurf : false,
+          isPostingSmurf : false,
           error : '',
         };
 
-      case types.ADD_SMURF_FAILURE:
+      case types.POST_SMURF_FAILURE:
         return {
           ...state,
-          isAddingSmurf : false,
+          isPostingSmurf : false,
           error : data,
         };
 
-      /// EDIT_SMURF ///
-      case types.EDIT_SMURF_TRY:
+      /// PUT_SMURF ///
+      case types.PUT_SMURF_TRY:
         return {
           ...state,
           smurf : data,
-          isEditingSmurf : true,
+          isPuttingSmurf : true,
         };
 
-      case types.EDIT_SMURF_SUCCESS:
+      case types.PUT_SMURF_SUCCESS:
         return {
           ...state,
           smurf : {}, // reset
-          isEditingSmurf : false,
+          isPuttingSmurf : false,
           error : '',
         };
 
-      case types.EDIT_SMURF_FAILURE:
+      case types.PUT_SMURF_FAILURE:
         return {
           ...state,
-          isEditingSmurf : false,
+          isPuttingSmurf : false,
           error : data,
         };
 

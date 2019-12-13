@@ -1,5 +1,6 @@
 /// external modules ///
 import React from 'react';
+import * as ReactRedux from 'react-redux';
 import styled from 'styled-components';
 
 /// styles ///
@@ -7,6 +8,9 @@ import './styles/App.css';
 
 /// components ///
 import SmurfsVillage from 'components/SmurfsVillage';
+
+/// states ///
+import { actions } from 'states/smurfs';
 
 /***************************************
   COMPONENTS
@@ -55,10 +59,30 @@ const AppBody = styled.main `
 `;
 
 /***************************************
+  REDUX
+***************************************/
+
+const mapStateToProps = (state) => ({
+});
+
+const mapDispatchToProps = {
+  getVillage : actions.specials.getVillage
+};
+
+const connectApp = ReactRedux.connect (
+  mapStateToProps, mapDispatchToProps,
+);
+
+
+/***************************************
   MAIN
 ***************************************/
 
 class App extends React.Component {
+  componentDidMount () {
+    this.props.getVillage ();
+  }
+
   render () {
     return (
       <AppContainer className="App">
@@ -78,4 +102,4 @@ class App extends React.Component {
 
 /**************************************/
 
-export default App;
+export default connectApp (App);

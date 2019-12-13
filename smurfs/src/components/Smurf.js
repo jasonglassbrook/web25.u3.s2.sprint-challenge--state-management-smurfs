@@ -24,7 +24,7 @@ const DataList = styled.ul `
   align-items: center;
 `;
 
-const DataItem = styled.li `
+const Data = styled.li `
   flex: 1 0 auto;
   margin: 4px;
   border: 1px solid White;
@@ -36,14 +36,14 @@ const DataItem = styled.li `
   flex-flow: row-nowrap;
 `;
 
-const DataItemKey = styled.span `
+const DataLabel = styled.span `
   margin: 2px;
   border-radius: 2px;
   padding: 4px;
   color: White;
 `
 
-const DataItemValue = styled.span `
+const DataValue = styled.span `
   margin: 2px;
   border-radius: 2px;
   padding: 4px 8px;
@@ -58,11 +58,11 @@ const DataItemValue = styled.span `
 const Smurf = ({ smurf = {}, props }) => {
   return (
     <Item className='Smurf'><DataList>
-      {['name', 'age', 'height'].map ((key) => (
-        <DataItem key={key}>
-          <DataItemKey>{key}</DataItemKey>
-          <DataItemValue>{smurf[key]}</DataItemValue>
-        </DataItem>
+      {['name', 'age', 'height'].map ((label) => (
+        <Data key={label}>
+          <DataLabel>{label}</DataLabel>
+          <DataValue>{smurf[label]}</DataValue>
+        </Data>
       ))}
     </DataList></Item>
   );

@@ -1,5 +1,6 @@
 /// external modules ///
 import React from 'react';
+import styled from 'styled-components';
 
 /// styles ///
 import './styles/App.css';
@@ -8,22 +9,69 @@ import './styles/App.css';
 import SmurfsVillage from 'components/SmurfsVillage';
 
 /***************************************
-  COMPONENT
+  COMPONENTS
 ***************************************/
+
+const AppContainer = styled.div `
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: stretch;
+
+  padding: 0 64px;
+  color: White;
+  background: #48BB78;
+`;
+
+const AppHead = styled.header `
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+  margin: 16px;
+  border-radius: 16px;
+  padding: 16px;
+
+  color: Black;
+  background: White;
+
+  & > *:first-child {
+    margin-top: 0;
+  }
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+`;
+
+const Heading = styled.h1 ``;
+
+const AppBody = styled.main `
+  flex: 1 0 auto;
+
+  margin: 16px;
+`;
+
+/***************************************
+  MAIN
+***************************************/
+
 class App extends React.Component {
   render () {
     return (
-      <div className="App">
-        <header>
-          <h1>SMURFS! 2.0 W/ Redux</h1>
+      <AppContainer className="App">
+        <AppHead>
+          <Heading>SMURFS! 2.0 W/ Redux</Heading>
           <p>Welcome to your state management version of Smurfs!</p>
           <p>Start inside of your `src/index.js` file!</p>
           <p>Have fun!</p>
-        </header>
-        <main>
+        </AppHead>
+        <AppBody>
           <SmurfsVillage/>
-        </main>
-      </div>
+        </AppBody>
+      </AppContainer>
     );
   };
 };

@@ -44,6 +44,29 @@ const reducer = (state = initState, action) => {
           error : data,
         };
 
+      /// ADD_SMURF ///
+      case types.ADD_SMURF_TRY:
+        return {
+          ...state,
+          smurf : data,
+          isAddingSmurf : true,
+        };
+
+      case types.ADD_SMURF_SUCCESS:
+        return {
+          ...state,
+          smurf : {},
+          isAddingSmurf : false,
+          error : '',
+        };
+
+      case types.ADD_SMURF_FAILURE:
+        return {
+          ...state,
+          isAddingSmurf : false,
+          error : data,
+        };
+
       /// else ///
       default :
         hi.flag ('warn', 'action not defined');

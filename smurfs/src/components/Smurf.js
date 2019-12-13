@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components'
 
 /***************************************
-  MAIN
+  COMPONENTS
 ***************************************/
 const Item = styled.li `
   flex: 1 0 auto;
@@ -50,6 +50,9 @@ const DataItemValue = styled.span `
   background: White;
 `
 
+/***************************************
+  MAIN
+***************************************/
 const Smurf = ({ smurf = {}, props }) => {
   return (
     <Item className='Smurf'><DataList>

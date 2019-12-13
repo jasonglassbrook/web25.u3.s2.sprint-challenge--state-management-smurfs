@@ -3,6 +3,9 @@ import React from 'react';
 import * as ReactRedux from 'react-redux';
 import styled from 'styled-components';
 
+/// styles ///
+import colors from 'styles/colors';
+
 /// components ///
 import Smurf from './Smurf';
 
@@ -14,10 +17,10 @@ import { actions } from 'states/smurfs';
 ***************************************/
 
 const Section = styled.section `
-  border: 4px solid White;
+  border: 4px solid ${colors['light']};
   border-radius: 16px;
   padding: 8px;
-  color: White;
+  color: ${colors['light']};
   background: none;
 `;
 

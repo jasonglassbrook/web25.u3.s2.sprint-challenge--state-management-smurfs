@@ -4,7 +4,8 @@ import * as ReactRedux from 'react-redux';
 import styled from 'styled-components';
 
 /// styles ///
-import './styles/App.css';
+import 'styles/App.css';
+import colors from 'styles/colors';
 
 /// components ///
 import SmurfForm from 'components/SmurfForm';

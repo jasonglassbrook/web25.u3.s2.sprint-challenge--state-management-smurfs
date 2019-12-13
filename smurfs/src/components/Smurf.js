@@ -2,15 +2,12 @@
 import React from 'react';
 import styled from 'styled-components'
 
+/// styles ///
+import colors from 'styles/colors';
+
 /***************************************
   COMPONENTS
 ***************************************/
-
-const colors = {
-  'light' : 'White',
-  'smurf' : '#3182CE',
-  'mid-smurf' : '#90CDF4',
-}
 
 const Item = styled.li `
   flex: 1 0 auto;
@@ -39,7 +36,7 @@ const DataList = styled.ul `
 const Data = styled.li `
   flex: 1 0 auto;
   margin: 4px;
-  border: 1px solid ${colors['mid-smurf']};
+  border: 1px solid ${colors['light-smurf']};
   border-radius: 4px;
   padding: 2px;
   color: ${colors['light']};

@@ -3,17 +3,12 @@ import React from 'react';
 import * as ReactRedux from 'react-redux';
 import styled from 'styled-components'
 
+/// styles ///
+import colors from 'styles/colors';
+
 /***************************************
   COMPONENTS
 ***************************************/
-
-const colors = {
-  'light' : 'White',
-  'smurf' : '#3182CE',
-  'mid-smurf' : '#90CDF4',
-  'focus' : '#E53E3E',
-  'mid-focus' : '#FEB2B2',
-}
 
 const Form = styled.form `
   flex: 1 0 auto;
@@ -42,7 +37,7 @@ const DataList = styled.ul `
 const Data = styled.li `
   flex: 1 0 auto;
   margin: 4px;
-  border: 1px solid ${colors['mid-smurf']};
+  border: 1px solid ${colors['light-smurf']};
   border-radius: 4px;
   padding: 2px;
   color: ${colors['light']};
@@ -63,7 +58,7 @@ const DataLabel = styled.label `
 
 const DataInput = styled.input `
   margin: 2px;
-  border: 2px solid ${colors['mid-smurf']};
+  border: 2px solid ${colors['light-smurf']};
   border-radius: 2px;
   padding: 4px 8px;
   color: ${colors['smurf']};
@@ -75,7 +70,7 @@ const DataInput = styled.input `
     border 0.5s;
 
   &:hover {
-    border: 2px solid ${colors['mid-focus']};
+    border: 2px solid ${colors['light-focus']};
   }
 
   &:focus, &:active {
@@ -98,7 +93,7 @@ const Button = styled.button `
     text-decoration 0.5s;
 
   &:hover {
-    border: 2px solid ${colors['mid-focus']};
+    border: 2px solid ${colors['light-focus']};
     text-decoration: underline;
   }
 

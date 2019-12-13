@@ -50,7 +50,7 @@ const DataItemValue = styled.span `
   background: White;
 `
 
-const Smurf = ({ smurf, props }) => {
+const Smurf = ({ smurf = {}, props }) => {
   return (
     <Item className='Smurf'><DataList>
       <DataItem>

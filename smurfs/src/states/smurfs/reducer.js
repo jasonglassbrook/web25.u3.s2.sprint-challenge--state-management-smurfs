@@ -55,7 +55,7 @@ const reducer = (state = initState, action) => {
       case types.ADD_SMURF_SUCCESS:
         return {
           ...state,
-          smurf : {},
+          smurf : {}, // reset
           isAddingSmurf : false,
           error : '',
         };

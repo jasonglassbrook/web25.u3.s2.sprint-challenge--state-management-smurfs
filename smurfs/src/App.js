@@ -73,7 +73,6 @@ const connectApp = ReactRedux.connect (
   mapStateToProps, mapDispatchToProps,
 );
 
-
 /***************************************
   MAIN
 ***************************************/

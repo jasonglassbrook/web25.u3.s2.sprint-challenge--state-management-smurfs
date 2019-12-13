@@ -67,6 +67,52 @@ const reducer = (state = initState, action) => {
           error : data,
         };
 
+      /// EDIT_SMURF ///
+      case types.EDIT_SMURF_TRY:
+        return {
+          ...state,
+          smurf : data,
+          isEditingSmurf : true,
+        };
+
+      case types.EDIT_SMURF_SUCCESS:
+        return {
+          ...state,
+          smurf : {}, // reset
+          isEditingSmurf : false,
+          error : '',
+        };
+
+      case types.EDIT_SMURF_FAILURE:
+        return {
+          ...state,
+          isEditingSmurf : false,
+          error : data,
+        };
+
+      /// DELETE_SMURF ///
+      case types.DELETE_SMURF_TRY:
+        return {
+          ...state,
+          smurf : data,
+          isDeletingSmurf : true,
+        };
+
+      case types.DELETE_SMURF_SUCCESS:
+        return {
+          ...state,
+          smurf : {}, // reset
+          isDeletingSmurf : false,
+          error : '',
+        };
+
+      case types.DELETE_SMURF_FAILURE:
+        return {
+          ...state,
+          isDeletingSmurf : false,
+          error : data,
+        };
+
       /// else ///
       default :
         hi.flag ('warn', 'action not defined');

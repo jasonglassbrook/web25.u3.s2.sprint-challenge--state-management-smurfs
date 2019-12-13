@@ -34,7 +34,7 @@ export const types = {
 /*--------------------------------------
   actions / make, makers
 --------------------------------------*/
-const make = (type, payload) => ({ type, payload });
+const make = (type, data) => ({ type, data });
 
 export const makers = Object.fromEntries (
   Object.keys (types).map ((name) => [
@@ -70,9 +70,11 @@ specials.getVillage = () => (dispatch /*, getState */) => {
   axios
     .get (api.village.get ())
     .then ((response) => {
+      console.log (response);
       dispatch (make (types.GET_VILLAGE_SUCCESS, response.data));
     })
     .catch ((error) => {
+      console.log (error);
       dispatch (make (types.GET_VILLAGE_FAILURE, error.response));
     });
 };
@@ -87,9 +89,11 @@ specials.addSmurf = () => (dispatch, getState) => {
   axios
     .post (api.smurf.post (), smurf)
     .then ((response) => {
+      console.log (response);
       dispatch (make (types.POST_SMURF_SUCCESS, response.data));
     })
     .catch ((error) => {
+      console.log (error);
       dispatch (make (types.POST_SMURF_FAILURE, error.response));
     });
 };
@@ -104,9 +108,11 @@ specials.editSmurf = () => (dispatch, getState) => {
   axios
     .get (api.smurf.put (smurf.id), smurf)
     .then ((response) => {
+      console.log (response);
       dispatch (make (types.PUT_SMURF_SUCCESS, response.data));
     })
     .catch ((error) => {
+      console.log (error);
       dispatch (make (types.PUT_SMURF_FAILURE, error.response));
     });
 };
@@ -121,9 +127,11 @@ specials.deleteSmurf = () => (dispatch, getState) => {
   axios
     .get (api.smurf.delete (smurf.id), smurf)
     .then ((response) => {
+      console.log (response);
       dispatch (make (types.DELETE_SMURF_SUCCESS, response.data));
     })
     .catch ((error) => {
+      console.log (error);
       dispatch (make (types.DELETE_SMURF_FAILURE, error.response));
     });
 };

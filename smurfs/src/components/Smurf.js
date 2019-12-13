@@ -5,6 +5,7 @@ import styled from 'styled-components'
 /***************************************
   COMPONENTS
 ***************************************/
+
 const Item = styled.li `
   flex: 1 0 auto;
   margin: 4px;
@@ -53,6 +54,7 @@ const DataItemValue = styled.span `
 /***************************************
   MAIN
 ***************************************/
+
 const Smurf = ({ smurf = {}, props }) => {
   return (
     <Item className='Smurf'><DataList>

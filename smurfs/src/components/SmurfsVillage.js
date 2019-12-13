@@ -8,6 +8,7 @@ import Smurf from './Smurf';
 /***************************************
   COMPONENTS
 ***************************************/
+
 const Section = styled.section `
   margin: 8px;
   border: 4px solid White;
@@ -40,6 +41,7 @@ const SmurfsList = styled.ul `
 /***************************************
   MAIN
 ***************************************/
+
 const SmurfsVillage = ({ village = [{ id : (Date.now ()) }], ...props }) => {
   return (
     <Section className='SmurfsVillage'>

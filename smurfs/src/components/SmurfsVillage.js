@@ -10,7 +10,6 @@ import Smurf from './Smurf';
 ***************************************/
 
 const Section = styled.section `
-  margin: 8px;
   border: 4px solid White;
   border-radius: 16px;
   padding: 8px;

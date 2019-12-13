@@ -13,7 +13,7 @@ const Item = styled.li `
   border-radius: 8px;
   padding: 4px;
   color: White;
-  background: SkyBlue;
+  background: DodgerBlue;
 `;
 
 const DataList = styled.ul `
@@ -47,7 +47,7 @@ const DataItemValue = styled.span `
   margin: 2px;
   border-radius: 2px;
   padding: 2px;
-  color: SkyBlue;
+  color: DodgerBlue;
   background: White;
 `
 

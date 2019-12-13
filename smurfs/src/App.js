@@ -82,7 +82,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-  getVillage : actions.specials.getVillage
+  getVillage : actions.specials.getVillage,
 };
 
 const connect = ReactRedux.connect (

@@ -12,9 +12,6 @@ import colors from 'styles/colors';
 
 const Form = styled.form `
   flex: 1 0 auto;
-  margin: 8px;
-  border: 1px solid ${colors['light']};
-  border-radius: 8px;
   padding: 4px;
   color: ${colors['light']};
   background: ${colors['smurf']};

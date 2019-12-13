@@ -17,9 +17,6 @@ import { actions } from 'states/smurfs';
 ***************************************/
 
 const Section = styled.section `
-  border: 4px solid ${colors['light']};
-  border-radius: 16px;
-  padding: 8px;
   color: ${colors['light']};
   background: none;
 `;

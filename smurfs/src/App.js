@@ -28,6 +28,11 @@ const AppContainer = styled.div `
   padding: 0 64px;
   color: White;
   background: #48BB78;
+
+  & > * {
+    margin: 16px 0;
+    border-radius: 16px;
+  }
 `;
 
 const AppHead = styled.header `
@@ -37,8 +42,6 @@ const AppHead = styled.header `
   justify-content: center;
   align-items: center;
 
-  margin: 16px;
-  border-radius: 16px;
   padding: 16px;
 
   color: Black;
@@ -56,8 +59,19 @@ const Heading = styled.h1 ``;
 
 const AppBody = styled.main `
   flex: 1 0 auto;
+  border-top: 1px solid ${colors['light']};
 
-  margin: 16px;
+  & > * {
+    border: 4px solid ${colors['light']};
+    margin: 16px 0;
+    border-radius: 16px;
+  }
+  & > *:first-child {
+    margin-top: 0;
+  }
+  & > *:last-child {
+    margin-bottom: 0;
+  }
 `;
 
 /***************************************

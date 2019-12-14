@@ -10,7 +10,7 @@ import colors from 'styles/colors';
 import Smurf from './Smurf';
 
 /// states ///
-import { actions } from 'states/smurfs';
+import { init, actions } from 'states/smurfs';
 
 /***************************************
   COMPONENTS
@@ -59,7 +59,7 @@ const connect = ReactRedux.connect (
   MAIN
 ***************************************/
 
-const SmurfsVillage = ({ village = [{ id : (Date.now ()) }], ...props }) => {
+const SmurfsVillage = ({ village = init.village, ...props }) => {
   return (
     <Section className='SmurfsVillage'>
       <SectionHead>

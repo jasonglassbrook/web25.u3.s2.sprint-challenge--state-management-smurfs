@@ -7,7 +7,7 @@ import styled from 'styled-components'
 import colors from 'styles/colors';
 
 /// states ///
-import { actions } from 'states/smurfs';
+import { init, actions } from 'states/smurfs';
 
 /***************************************
   COMPONENTS
@@ -128,8 +128,8 @@ const connect = ReactRedux.connect (
   MAIN
 ***************************************/
 
-const SmurfForm = ({ smurf = {}, smurfMode, addSmurf, editSmurf, deleteSmurf, ...props }) => {
-  const [ state, setState ] = React.useState (smurf);
+const SmurfForm = ({ smurf = init.smurf, smurfMode, addSmurf, editSmurf, deleteSmurf, ...props }) => {
+  const [ state, setState ] = React.useState ({ ...smurf });
 
   const handleChange = (e) => {
     console.log (e.target);
@@ -168,7 +168,7 @@ const SmurfForm = ({ smurf = {}, smurfMode, addSmurf, editSmurf, deleteSmurf, ..
             onChange={handleChange}/>
           </Data>
         ))}
-      </DataList>
+        </DataList>
       <Button mode={smurfMode} type='submit'>Submit</Button>
     </Form>
   );

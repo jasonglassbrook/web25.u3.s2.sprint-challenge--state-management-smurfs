@@ -5,6 +5,9 @@ import styled from 'styled-components'
 /// styles ///
 import colors from 'styles/colors';
 
+/// states ///
+import { init } from 'states/smurfs';
+
 /***************************************
   COMPONENTS
 ***************************************/
@@ -67,7 +70,7 @@ const DataValue = styled.span `
   MAIN
 ***************************************/
 
-const Smurf = ({ smurf = {}, props }) => {
+const Smurf = ({ smurf = init.smurf, props }) => {
   return (
     <Item className='Smurf'><DataList>
       {['name', 'age', 'height'].map ((label) => (

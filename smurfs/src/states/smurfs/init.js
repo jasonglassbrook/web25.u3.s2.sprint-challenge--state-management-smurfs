@@ -10,7 +10,11 @@ const init = {
   isGettingVillage : false,
 
   /// some smurf ///
-  smurf : {},
+  smurf : {
+    name   : '',
+    age    : '',
+    height : '',
+  },
   smurfMode : 'add',
   isPostingSmurf : false,
   isPuttingSmurf : false,

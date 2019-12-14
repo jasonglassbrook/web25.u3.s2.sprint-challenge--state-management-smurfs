@@ -17,7 +17,7 @@ const Form = styled.form `
   flex: 1 0 auto;
   padding: 4px;
   color: ${colors['white']};
-  background: ${colors['smurf']};
+  background: ${colors['min-gray']};
 
   display: flex;
   flex-flow: row nowrap;
@@ -37,10 +37,10 @@ const DataList = styled.ul `
 const Data = styled.li `
   flex: 1 0 auto;
   margin: 4px;
-  border: 1px solid ${colors['light-smurf']};
+  border: 1px solid ${colors['lightgray']};
   border-radius: 4px;
   padding: 2px;
-  color: ${colors['white']};
+  color: ${colors['gray']};
 
   display: flex;
   flex-flow: row nowrap;
@@ -53,15 +53,15 @@ const DataLabel = styled.label `
   margin: 2px;
   border-radius: 2px;
   padding: 4px;
-  color: ${colors['white']};
+  color: ${colors['dark-gray']};
 `;
 
 const DataInput = styled.input `
   margin: 2px;
-  border: 2px solid ${colors['light-smurf']};
+  border: 2px solid ${({ mode = 'gray' }) => colors[`light-${mode}`]};
   border-radius: 2px;
   padding: 4px 8px;
-  color: ${colors['smurf']};
+  color: ${({ mode = 'gray' }) => colors[`${mode}`]};
   background: ${colors['white']};
 
   outline: none;
@@ -70,11 +70,11 @@ const DataInput = styled.input `
     border 0.5s;
 
   &:hover {
-    border: 2px solid ${colors['light-focus']};
+    border: 2px solid ${({ mode = 'gray' }) => colors[`light-${mode}`]};
   }
 
   &:focus, &:active {
-    border: 2px solid ${colors['focus']};
+    border: 2px solid ${({ mode = 'gray' }) => colors[`${mode}`]};
   }
 `;
 
@@ -86,14 +86,14 @@ const Button = styled.button `
   padding: 2px;
 
   color: ${colors['white']};
-  background: ${colors['focus']};
+  background: ${({ mode = 'gray' }) => colors[`${mode}`]};
 
   transition:
     border 0.5s,
     text-decoration 0.5s;
 
   &:hover {
-    border: 2px solid ${colors['light-focus']};
+    border: 2px solid ${({ mode = 'gray' }) => colors[`light-${mode}`]};
     text-decoration: underline;
   }
 
@@ -102,6 +102,8 @@ const Button = styled.button `
     text-decoration: underline;
   }
 `;
+
+
 
 /***************************************
   REDUX
@@ -130,6 +132,9 @@ const SmurfForm = ({ smurf = {}, smurfMode, addSmurf, editSmurf, deleteSmurf, ..
   const [ state, setState ] = React.useState (smurf);
 
   const handleChange = (e) => {
+    console.log (e.target);
+    console.log (e.target.name);
+    console.log (e.target.value);
     setState ((state) => ({
       ...state,
       [e.target.name] : e.target.value,
@@ -138,7 +143,12 @@ const SmurfForm = ({ smurf = {}, smurfMode, addSmurf, editSmurf, deleteSmurf, ..
 
   const handleSubmit = (e) => {
     e.preventDefault ();
-    // submit && submit (state); /// this
+    switch (smurfMode) {
+      case 'add' : addSmurf (state); break;
+      case 'edit' : editSmurf (state); break;
+      case 'delete' : deleteSmurf (state); break;
+      default : console.log ('something went wrong'); break;
+    }
   }
 
   return (
@@ -159,7 +169,7 @@ const SmurfForm = ({ smurf = {}, smurfMode, addSmurf, editSmurf, deleteSmurf, ..
           </Data>
         ))}
       </DataList>
-      <Button type='submit'>Submit</Button>
+      <Button mode={smurfMode} type='submit'>Submit</Button>
     </Form>
   );
 };

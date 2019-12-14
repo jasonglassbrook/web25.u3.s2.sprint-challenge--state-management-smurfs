@@ -6,6 +6,9 @@ import styled from 'styled-components'
 /// styles ///
 import colors from 'styles/colors';
 
+/// states ///
+import { actions } from 'states/smurfs';
+
 /***************************************
   COMPONENTS
 ***************************************/
@@ -106,9 +109,14 @@ const Button = styled.button `
 
 const mapStateToProps = (state) => ({
   smurf : state.smurf,
+  smurfMode : state.smurfMode,
 });
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+  addSmurf : actions.specials.addSmurf,
+  editSmurf : actions.specials.editSmurf,
+  deleteSmurf : actions.specials.deleteSmurf,
+};
 
 const connect = ReactRedux.connect (
   mapStateToProps, mapDispatchToProps,
@@ -118,7 +126,7 @@ const connect = ReactRedux.connect (
   MAIN
 ***************************************/
 
-const SmurfForm = ({ smurf = {}, submit, props }) => {
+const SmurfForm = ({ smurf = {}, smurfMode, addSmurf, editSmurf, deleteSmurf, ...props }) => {
   const [ state, setState ] = React.useState (smurf);
 
   const handleChange = (e) => {
@@ -130,7 +138,7 @@ const SmurfForm = ({ smurf = {}, submit, props }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault ();
-    submit && submit (state);
+    // submit && submit (state); /// this
   }
 
   return (

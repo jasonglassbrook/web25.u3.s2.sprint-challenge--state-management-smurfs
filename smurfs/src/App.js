@@ -27,7 +27,7 @@ const AppContainer = styled.div `
 
   padding: 0 64px;
   color: White;
-  background: #48BB78;
+  background: ${colors['forest']};
 
   & > * {
     margin: 16px 0;

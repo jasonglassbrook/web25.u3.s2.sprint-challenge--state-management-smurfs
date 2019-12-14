@@ -5,7 +5,7 @@ import hi from 'tools/hi';
 // import nullably from 'tools/nullably';
 
 /// internal modules ///
-import initState from './init'
+import init from './init'
 import { types } from './actions';
 
 /***************************************
@@ -14,7 +14,7 @@ import { types } from './actions';
   - reducer : state reducer
 ***************************************/
 
-const reducer = (state = initState, action) => {
+const reducer = (state = init, action) => {
   const { type, data } = action;
 
   /// do it! ///
@@ -55,7 +55,7 @@ const reducer = (state = initState, action) => {
       case types.POST_SMURF_SUCCESS:
         return {
           ...state,
-          smurf : {}, // reset
+          smurf : init.smurf, // reset
           isPostingSmurf : false,
           error : '',
         };
@@ -78,7 +78,7 @@ const reducer = (state = initState, action) => {
       case types.PUT_SMURF_SUCCESS:
         return {
           ...state,
-          smurf : {}, // reset
+          smurf : init.smurf, // reset
           isPuttingSmurf : false,
           error : '',
         };
@@ -101,7 +101,7 @@ const reducer = (state = initState, action) => {
       case types.DELETE_SMURF_SUCCESS:
         return {
           ...state,
-          smurf : {}, // reset
+          smurf : init.smurf, // reset
           isDeletingSmurf : false,
           error : '',
         };

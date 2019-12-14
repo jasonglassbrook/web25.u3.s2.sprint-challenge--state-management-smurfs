@@ -1,22 +1,30 @@
 export default {
   'white' : '#F7FAFC',
   'black' : '#1A202C',
-  // grays
+  // gray
   'min-gray'   : '#F7FAFC',
   'light-gray' : '#E2E8F0',
-  'mid-gray'   : '#A0AEC0',
+  'gray'       : '#A0AEC0',
   'dark-gray'  : '#4A5568',
   'max-gray'   : '#1A202C',
   // forest
+  'light-forest' : '#C6F6D5',
   'forest'       : '#38A169',
-  'light-forest' : '#9AE6B4',
-  'dark-forest'  : '#22543D',
+  'dark-forest'  : '#276749',
   // smurf
-  'smurf'       : '#3182CE',
-  'light-smurf' : '#90CDF4',
-  'dark-smurf'  : '#2A4365',
-  // focus
-  'focus'       : '#E53E3E',
-  'light-focus' : '#FEB2B2',
-  'dark-focus'  : '#742A2A',
+  'light-smurf' : '#BEE3F8',
+  'smurf'       : '#4299E1',
+  'dark-smurf'  : '#2C5282',
+  // smurfMode : add
+  'light-add' : '#BEE3F8',
+  'add'       : '#4299E1',
+  'dark-add'  : '#2C5282',
+  // smurfMode : edit
+  'light-edit' : '#FEFCBF',
+  'edit'       : '#ECC94B',
+  'dark-edit'  : '#975A16',
+  // smurfMode : delete
+  'light-delete' : '#FEB2B2',
+  'delete'       : '#F56565',
+  'dark-delete'  : '#FED7D7',
 };

@@ -59,10 +59,10 @@ const Heading = styled.h1 ``;
 
 const AppBody = styled.main `
   flex: 1 0 auto;
-  border-top: 1px solid ${colors['light']};
+  border-top: 1px solid ${colors['white']};
 
   & > * {
-    border: 4px solid ${colors['light']};
+    border: 4px solid ${colors['white']};
     margin: 16px 0;
     border-radius: 16px;
   }

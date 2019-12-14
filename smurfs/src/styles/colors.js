@@ -1,6 +1,12 @@
 export default {
-  'light' : '#F7FAFC',
-  'dark'  : '#1A202C',
+  'white' : '#F7FAFC',
+  'black' : '#1A202C',
+  // grays
+  'min-gray'   : '#F7FAFC',
+  'light-gray' : '#E2E8F0',
+  'mid-gray'   : '#A0AEC0',
+  'dark-gray'  : '#4A5568',
+  'max-gray'   : '#1A202C',
   // forest
   'forest'       : '#38A169',
   'light-forest' : '#9AE6B4',

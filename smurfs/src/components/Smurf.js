@@ -12,10 +12,10 @@ import colors from 'styles/colors';
 const Item = styled.li `
   flex: 1 0 auto;
   margin: 8px;
-  border: 1px solid ${colors['light']};
+  border: 1px solid ${colors['white']};
   border-radius: 8px;
   padding: 4px;
-  color: ${colors['light']};
+  color: ${colors['white']};
   background: ${colors['smurf']};
 
   display: flex;
@@ -39,7 +39,7 @@ const Data = styled.li `
   border: 1px solid ${colors['light-smurf']};
   border-radius: 4px;
   padding: 2px;
-  color: ${colors['light']};
+  color: ${colors['white']};
 
   display: flex;
   flex-flow: row nowrap;
@@ -52,7 +52,7 @@ const DataLabel = styled.span `
   margin: 2px;
   border-radius: 2px;
   padding: 4px;
-  color: ${colors['light']};
+  color: ${colors['white']};
 `
 
 const DataValue = styled.span `
@@ -60,7 +60,7 @@ const DataValue = styled.span `
   border-radius: 2px;
   padding: 4px 8px;
   color: ${colors['smurf']};
-  background: ${colors['light']};
+  background: ${colors['white']};
 `
 
 /***************************************

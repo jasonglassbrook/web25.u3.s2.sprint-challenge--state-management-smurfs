@@ -16,7 +16,7 @@ import { actions } from 'states/smurfs';
 const Form = styled.form `
   flex: 1 0 auto;
   padding: 4px;
-  color: ${colors['light']};
+  color: ${colors['white']};
   background: ${colors['smurf']};
 
   display: flex;
@@ -40,7 +40,7 @@ const Data = styled.li `
   border: 1px solid ${colors['light-smurf']};
   border-radius: 4px;
   padding: 2px;
-  color: ${colors['light']};
+  color: ${colors['white']};
 
   display: flex;
   flex-flow: row nowrap;
@@ -53,7 +53,7 @@ const DataLabel = styled.label `
   margin: 2px;
   border-radius: 2px;
   padding: 4px;
-  color: ${colors['light']};
+  color: ${colors['white']};
 `;
 
 const DataInput = styled.input `
@@ -62,7 +62,7 @@ const DataInput = styled.input `
   border-radius: 2px;
   padding: 4px 8px;
   color: ${colors['smurf']};
-  background: ${colors['light']};
+  background: ${colors['white']};
 
   outline: none;
 
@@ -85,7 +85,7 @@ const Button = styled.button `
   border-radius: 4px;
   padding: 2px;
 
-  color: ${colors['light']};
+  color: ${colors['white']};
   background: ${colors['focus']};
 
   transition:
@@ -98,7 +98,7 @@ const Button = styled.button `
   }
 
   &:active {
-    border: 2px solid ${colors['light']};
+    border: 2px solid ${colors['white']};
     text-decoration: underline;
   }
 `;

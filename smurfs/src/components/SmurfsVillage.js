@@ -17,7 +17,7 @@ import { actions } from 'states/smurfs';
 ***************************************/
 
 const Section = styled.section `
-  color: ${colors['light']};
+  color: ${colors['white']};
   background: none;
 `;
 

@@ -153,7 +153,7 @@ const SmurfForm = ({ smurf = init.smurf, smurfMode, addSmurf, editSmurf, deleteS
 
   return (
     <Form
-    className={`SmurfForm ${`${smurfMode}-mode`}`.trim ()}
+    className='SmurfForm'
     onSubmit={handleSubmit}>
       <DataList>
         {['name', 'age', 'height'].map ((label) => (

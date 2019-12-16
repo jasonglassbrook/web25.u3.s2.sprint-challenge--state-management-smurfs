@@ -120,7 +120,7 @@ const mapDispatchToProps = {
   addSmurf : actions.specials.postSmurf,
   editSmurf : actions.specials.putSmurf,
   deleteSmurf : actions.specials.deleteSmurf,
-  refresh : actions.specials.getVillage,
+  // refresh : actions.specials.getVillage,
 };
 
 const connect = ReactRedux.connect (
@@ -150,7 +150,7 @@ const SmurfForm = (props) => {
       case 'delete' : props.deleteSmurf (state); break;
       default : console.log ('something went wrong'); break;
     };
-    props.refresh ();
+    // props.refresh ();
   };
 
   return (

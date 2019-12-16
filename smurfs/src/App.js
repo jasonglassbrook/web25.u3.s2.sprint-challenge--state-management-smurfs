@@ -105,6 +105,10 @@ class App extends React.Component {
     this.props.getVillage ();
   }
 
+  componentDidUpdate () {
+    this.props.getVillage ();
+  }
+
   render () {
     return (
       <AppContainer className="App">

@@ -62,6 +62,7 @@ const reducer = (state = init, action) => {
       case types.POST_SMURF_SUCCESS :
         return {
           ...state,
+          village : data, // new village
           smurf : init.smurf, // reset
           isPostingSmurf : false,
           error : '',

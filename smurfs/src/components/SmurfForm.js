@@ -71,11 +71,11 @@ const DataInput = styled.input `
     box-shadow 0.5s;
 
   &:hover {
-    box-shadow: 0 0 0 4px ${({ mode = 'gray' }) => colors[`light-${mode}`]};
+    box-shadow: 0 0 0 2px ${({ mode = 'gray' }) => colors[`light-${mode}`]};
   }
 
   &:focus, &:active {
-    box-shadow: 0 0 0 4px ${({ mode = 'gray' }) => colors[mode]};
+    box-shadow: 0 0 0 2px ${({ mode = 'gray' }) => colors[mode]};
   }
 `;
 
@@ -90,16 +90,16 @@ const Button = styled.button `
   color: ${colors['white']};
 
   transition:
-    border 0.5s,
+    box-shadow 0.5s,
     text-decoration 0.5s;
 
   &:hover {
-    border: 1px solid ${({ mode = 'gray' }) => colors[`light-${mode}`]};
+    box-shadow: 0 0 0 2px ${({ mode = 'gray' }) => colors[`light-${mode}`]};
     text-decoration: underline;
   }
 
   &:active {
-    border: 1px solid ${colors['white']};
+    box-shadow: 0 0 0 2px ${colors['white']};
     text-decoration: underline;
   }
 `;

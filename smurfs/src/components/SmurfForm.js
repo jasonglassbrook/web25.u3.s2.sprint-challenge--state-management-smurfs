@@ -132,13 +132,10 @@ const connect = ReactRedux.connect (
 const SmurfForm = ({ smurf = init.smurf, smurfMode, addSmurf, editSmurf, deleteSmurf, ...props }) => {
   const [ state, setState ] = React.useState ({ ...smurf });
 
-  const handleChange = (e) => {
-    console.log (e.target);
-    console.log (e.target.name);
-    console.log (e.target.value);
+  const handleChange = ({ target : { name, value } }) => {
     setState ((state) => ({
       ...state,
-      [e.target.name] : e.target.value,
+      [name] : value,
     }))
   };
 

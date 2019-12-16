@@ -72,14 +72,17 @@ const DataValue = styled.span `
 
 const Smurf = ({ smurf = init.smurf, props }) => {
   return (
-    <Item className='Smurf'><DataList>
-      {['name', 'age', 'height'].map ((label) => (
-        <Data key={label}>
-          <DataLabel>{label}</DataLabel>
-          <DataValue>{smurf[label]}</DataValue>
-        </Data>
-      ))}
-    </DataList></Item>
+    <Item
+    className='Smurf'>
+      <DataList>
+        {['name', 'age', 'height'].map ((label) => (
+          <Data key={label}>
+            <DataLabel>{label}</DataLabel>
+            <DataValue>{smurf[label]}</DataValue>
+          </Data>
+        ))}
+      </DataList>
+    </Item>
   );
 };
 

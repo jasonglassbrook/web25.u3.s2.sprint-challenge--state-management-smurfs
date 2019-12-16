@@ -130,8 +130,8 @@ const connect = ReactRedux.connect (
   MAIN
 ***************************************/
 
-const SmurfForm = ({ smurf = init.smurf, smurfMode, setSmurf, addSmurf, editSmurf, deleteSmurf, ...props }) => {
-  const [ state, setState ] = React.useState ({ ...smurf });
+const SmurfForm = (props) => {
+  const [ state, setState ] = React.useState (props.smurf ?? init.smurf);
 
   const handleChange = ({ target : { name, value } }) => {
     setState ((state) => ({
@@ -142,11 +142,11 @@ const SmurfForm = ({ smurf = init.smurf, smurfMode, setSmurf, addSmurf, editSmur
 
   const handleSubmit = (e) => {
     e.preventDefault ();
-    setSmurf (state);
-    switch (smurfMode) {
-      case 'add' : addSmurf (state); break;
-      case 'edit' : editSmurf (state); break;
-      case 'delete' : deleteSmurf (state); break;
+    props.setSmurf (state);
+    switch (props.smurfMode) {
+      case 'add' : props.addSmurf (state); break;
+      case 'edit' : props.editSmurf (state); break;
+      case 'delete' : props.deleteSmurf (state); break;
       default : console.log ('something went wrong'); break;
     }
   }
@@ -154,7 +154,7 @@ const SmurfForm = ({ smurf = init.smurf, smurfMode, setSmurf, addSmurf, editSmur
   return (
     <Form
     className='SmurfForm'
-    mode={smurfMode}
+    mode={props.smurfMode}
     onSubmit={handleSubmit}>
       <DataList>
         {['name', 'age', 'height'].map ((label) => (
@@ -165,7 +165,7 @@ const SmurfForm = ({ smurf = init.smurf, smurfMode, setSmurf, addSmurf, editSmur
             </DataLabel>
             <DataInput
             id={`SmurfForm-${label}`}
-            mode={smurfMode}
+            mode={props.smurfMode}
             name={label}
             value={state[label]}
             placeholder={`enter ${label}`}
@@ -173,7 +173,7 @@ const SmurfForm = ({ smurf = init.smurf, smurfMode, setSmurf, addSmurf, editSmur
           </Data>
         ))}
       </DataList>
-      <Button mode={smurfMode} type='submit'>Submit</Button>
+      <Button mode={props.smurfMode} type='submit'>Submit</Button>
     </Form>
   );
 };

@@ -17,8 +17,13 @@ import { init, actions } from 'states/smurfs';
 ***************************************/
 
 const Section = styled.section `
-  color: ${colors['white']};
-  background: none;
+  border: 4px solid ${colors['dark-forest']};
+  background: ${colors['dark-forest']};
+  color: ${colors['light-forest']};
+
+  & > * {
+    margin: 8px;
+  }
 `;
 
 const SectionHead = styled.header `

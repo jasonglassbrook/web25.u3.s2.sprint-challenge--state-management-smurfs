@@ -16,8 +16,9 @@ import { init, actions } from 'states/smurfs';
 const Form = styled.form `
   flex: 1 0 auto;
   padding: 4px;
-  color: ${colors['white']};
+  border: 4px solid ${colors['white']}
   background: ${colors['min-gray']};
+  color: ${colors['max-gray']};
 
   display: flex;
   flex-flow: row nowrap;
@@ -37,7 +38,7 @@ const DataList = styled.ul `
 const Data = styled.li `
   flex: 1 0 auto;
   margin: 4px;
-  border: 1px solid ${colors['lightgray']};
+  border: 1px solid ${colors['light-gray']};
   border-radius: 4px;
   padding: 2px;
   color: ${colors['gray']};
@@ -50,31 +51,31 @@ const Data = styled.li `
 `;
 
 const DataLabel = styled.label `
-  margin: 2px;
+  margin: 4px;
   border-radius: 2px;
   padding: 4px;
-  color: ${colors['dark-gray']};
+  color: ${colors['max-gray']};
 `;
 
 const DataInput = styled.input `
-  margin: 2px;
-  border: 2px solid ${({ mode = 'gray' }) => colors[`light-${mode}`]};
+  margin: 4px;
+  border: 1px solid ${({ mode = 'gray' }) => colors[mode]};
   border-radius: 2px;
   padding: 4px 8px;
-  color: ${({ mode = 'gray' }) => colors[`${mode}`]};
   background: ${colors['white']};
+  color: ${colors['max-gray']};
 
   outline: none;
 
   transition:
-    border 0.5s;
+    box-shadow 0.5s;
 
   &:hover {
-    border: 2px solid ${({ mode = 'gray' }) => colors[`light-${mode}`]};
+    box-shadow: 0 0 0 4px ${({ mode = 'gray' }) => colors[`light-${mode}`]};
   }
 
   &:focus, &:active {
-    border: 2px solid ${({ mode = 'gray' }) => colors[`${mode}`]};
+    box-shadow: 0 0 0 4px ${({ mode = 'gray' }) => colors[mode]};
   }
 `;
 
@@ -85,20 +86,20 @@ const Button = styled.button `
   border-radius: 4px;
   padding: 2px;
 
+  background: ${({ mode = 'gray' }) => colors[mode]};
   color: ${colors['white']};
-  background: ${({ mode = 'gray' }) => colors[`${mode}`]};
 
   transition:
     border 0.5s,
     text-decoration 0.5s;
 
   &:hover {
-    border: 2px solid ${({ mode = 'gray' }) => colors[`light-${mode}`]};
+    border: 1px solid ${({ mode = 'gray' }) => colors[`light-${mode}`]};
     text-decoration: underline;
   }
 
   &:active {
-    border: 2px solid ${colors['white']};
+    border: 1px solid ${colors['white']};
     text-decoration: underline;
   }
 `;
@@ -154,6 +155,7 @@ const SmurfForm = ({ smurf = init.smurf, smurfMode, addSmurf, editSmurf, deleteS
   return (
     <Form
     className='SmurfForm'
+    mode={smurfMode}
     onSubmit={handleSubmit}>
       <DataList>
         {['name', 'age', 'height'].map ((label) => (
@@ -164,13 +166,14 @@ const SmurfForm = ({ smurf = init.smurf, smurfMode, addSmurf, editSmurf, deleteS
             </DataLabel>
             <DataInput
             id={`SmurfForm-${label}`}
+            mode={smurfMode}
             name={label}
             value={state[label]}
             placeholder={`enter ${label}`}
             onChange={handleChange}/>
           </Data>
         ))}
-        </DataList>
+      </DataList>
       <Button mode={smurfMode} type='submit'>Submit</Button>
     </Form>
   );

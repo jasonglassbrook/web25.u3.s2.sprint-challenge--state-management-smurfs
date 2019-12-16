@@ -26,13 +26,20 @@ const AppContainer = styled.div `
   align-items: stretch;
 
   padding: 0 64px;
-  color: White;
   background: ${colors['forest']};
+  color: ${colors['light-forest']};
 
   & > * {
     margin: 16px 0;
-    border-radius: 16px;
   }
+`;
+
+const HorzLine = styled.hr `
+  height: 1px;
+  border: none;
+
+  background: ${colors['dark-forest']};
+  color: none;
 `;
 
 const AppHead = styled.header `
@@ -42,10 +49,12 @@ const AppHead = styled.header `
   justify-content: center;
   align-items: center;
 
+  border: 4px solid ${colors['dark-forest']};
+  border-radius: 16px;
   padding: 16px;
 
-  color: Black;
-  background: White;
+  background: ${colors['dark-forest']};
+  color: ${colors['light-forest']};
 
   & > *:first-child {
     margin-top: 0;
@@ -59,10 +68,8 @@ const Heading = styled.h1 ``;
 
 const AppBody = styled.main `
   flex: 1 0 auto;
-  border-top: 1px solid ${colors['white']};
 
   & > * {
-    border: 4px solid ${colors['white']};
     margin: 16px 0;
     border-radius: 16px;
   }
@@ -107,6 +114,7 @@ class App extends React.Component {
           <p>Start inside of your `src/index.js` file!</p>
           <p>Have fun!</p>
         </AppHead>
+        <HorzLine/>
         <AppBody>
           <SmurfForm/>
           <SmurfsVillage/>

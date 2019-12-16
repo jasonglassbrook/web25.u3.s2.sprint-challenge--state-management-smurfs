@@ -120,6 +120,7 @@ const mapDispatchToProps = {
   addSmurf : actions.specials.postSmurf,
   editSmurf : actions.specials.putSmurf,
   deleteSmurf : actions.specials.deleteSmurf,
+  refresh : actions.specials.getVillage,
 };
 
 const connect = ReactRedux.connect (
@@ -137,7 +138,7 @@ const SmurfForm = (props) => {
     setState ((state) => ({
       ...state,
       [name] : value,
-    }))
+    }));
   };
 
   const handleSubmit = (e) => {
@@ -148,8 +149,9 @@ const SmurfForm = (props) => {
       case 'edit' : props.editSmurf (state); break;
       case 'delete' : props.deleteSmurf (state); break;
       default : console.log ('something went wrong'); break;
-    }
-  }
+    };
+    props.refresh ();
+  };
 
   return (
     <Form

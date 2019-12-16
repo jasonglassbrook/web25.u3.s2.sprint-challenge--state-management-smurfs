@@ -10,7 +10,7 @@ import colors from 'styles/colors';
 import Smurf from './Smurf';
 
 /// states ///
-import { init, actions } from 'states/smurfs';
+import { init /*, actions*/ } from 'states/smurfs';
 
 /***************************************
   COMPONENTS

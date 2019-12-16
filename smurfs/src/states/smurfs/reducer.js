@@ -22,14 +22,21 @@ const reducer = (state = init, action) => {
     /// actions ///
     switch (type) {
 
+      /// STATE ///
+      case types.SET_STATE_SMURF :
+        return {
+          ...state,
+          smurf : data,
+        };
+
       /// GET_VILLAGE ///
-      case types.GET_VILLAGE_TRY:
+      case types.GET_VILLAGE_TRY :
         return {
           ...state,
           isGettingVillage : true,
         };
 
-      case types.GET_VILLAGE_SUCCESS:
+      case types.GET_VILLAGE_SUCCESS :
         return {
           ...state,
           village : data,
@@ -37,7 +44,7 @@ const reducer = (state = init, action) => {
           error : '',
         };
 
-      case types.GET_VILLAGE_FAILURE:
+      case types.GET_VILLAGE_FAILURE :
         return {
           ...state,
           isGettingVillage : false,
@@ -45,14 +52,14 @@ const reducer = (state = init, action) => {
         };
 
       /// POST_SMURF ///
-      case types.POST_SMURF_TRY:
+      case types.POST_SMURF_TRY :
         return {
           ...state,
           smurf : data,
           isPostingSmurf : true,
         };
 
-      case types.POST_SMURF_SUCCESS:
+      case types.POST_SMURF_SUCCESS :
         return {
           ...state,
           smurf : init.smurf, // reset
@@ -60,7 +67,7 @@ const reducer = (state = init, action) => {
           error : '',
         };
 
-      case types.POST_SMURF_FAILURE:
+      case types.POST_SMURF_FAILURE :
         return {
           ...state,
           isPostingSmurf : false,
@@ -68,14 +75,14 @@ const reducer = (state = init, action) => {
         };
 
       /// PUT_SMURF ///
-      case types.PUT_SMURF_TRY:
+      case types.PUT_SMURF_TRY :
         return {
           ...state,
           smurf : data,
           isPuttingSmurf : true,
         };
 
-      case types.PUT_SMURF_SUCCESS:
+      case types.PUT_SMURF_SUCCESS :
         return {
           ...state,
           smurf : init.smurf, // reset
@@ -83,7 +90,7 @@ const reducer = (state = init, action) => {
           error : '',
         };
 
-      case types.PUT_SMURF_FAILURE:
+      case types.PUT_SMURF_FAILURE :
         return {
           ...state,
           isPuttingSmurf : false,
@@ -91,14 +98,14 @@ const reducer = (state = init, action) => {
         };
 
       /// DELETE_SMURF ///
-      case types.DELETE_SMURF_TRY:
+      case types.DELETE_SMURF_TRY :
         return {
           ...state,
           smurf : data,
           isDeletingSmurf : true,
         };
 
-      case types.DELETE_SMURF_SUCCESS:
+      case types.DELETE_SMURF_SUCCESS :
         return {
           ...state,
           smurf : init.smurf, // reset
@@ -106,7 +113,7 @@ const reducer = (state = init, action) => {
           error : '',
         };
 
-      case types.DELETE_SMURF_FAILURE:
+      case types.DELETE_SMURF_FAILURE :
         return {
           ...state,
           isDeletingSmurf : false,
@@ -114,7 +121,7 @@ const reducer = (state = init, action) => {
         };
 
       /// else ///
-      default :
+      default  :
         hi.flag ('warn', 'action not defined');
         console.log (action);
         return (state);

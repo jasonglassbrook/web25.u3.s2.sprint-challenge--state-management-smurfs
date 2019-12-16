@@ -116,8 +116,9 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-  addSmurf : actions.specials.addSmurf,
-  editSmurf : actions.specials.editSmurf,
+  setSmurf : actions.basics.SET_STATE_SMURF,
+  addSmurf : actions.specials.postSmurf,
+  editSmurf : actions.specials.putSmurf,
   deleteSmurf : actions.specials.deleteSmurf,
 };
 
@@ -129,7 +130,7 @@ const connect = ReactRedux.connect (
   MAIN
 ***************************************/
 
-const SmurfForm = ({ smurf = init.smurf, smurfMode, addSmurf, editSmurf, deleteSmurf, ...props }) => {
+const SmurfForm = ({ smurf = init.smurf, smurfMode, setSmurf, addSmurf, editSmurf, deleteSmurf, ...props }) => {
   const [ state, setState ] = React.useState ({ ...smurf });
 
   const handleChange = ({ target : { name, value } }) => {
@@ -141,6 +142,7 @@ const SmurfForm = ({ smurf = init.smurf, smurfMode, addSmurf, editSmurf, deleteS
 
   const handleSubmit = (e) => {
     e.preventDefault ();
+    setSmurf (state);
     switch (smurfMode) {
       case 'add' : addSmurf (state); break;
       case 'edit' : editSmurf (state); break;

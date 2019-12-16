@@ -5,7 +5,7 @@ import axios from 'axios';
 ----------------------------------------
   - types    : list of action types
   - make     : fun to make (create) an action obj
-  - makers   : obj of action maker (creator) funs
+  - basics   : obj of action creator funs
   - specials : obj of specialized dispatchers
 ***************************************/
 
@@ -13,30 +13,33 @@ import axios from 'axios';
   actions / types
 --------------------------------------*/
 export const types = {
-  // get
+  /// state ///
+  SET_STATE_SMURF : 'SET_STATE_SMURF',
+  /// http requests ///
+  /// - get ///
   GET_VILLAGE_TRY     : 'GET_VILLAGE_TRY',
   GET_VILLAGE_SUCCESS : 'GET_VILLAGE_SUCCESS',
   GET_VILLAGE_FAILURE : 'GET_VILLAGE_FAILURE',
-  // post
+  /// - post ///
   POST_SMURF_TRY     : 'POST_SMURF_TRY',
   POST_SMURF_SUCCESS : 'POST_SMURF_SUCCESS',
   POST_SMURF_FAILURE : 'POST_SMURF_FAILURE',
-  // put
+  /// - put ///
   PUT_SMURF_TRY     : 'PUT_SMURF_TRY',
   PUT_SMURF_SUCCESS : 'PUT_SMURF_SUCCESS',
   PUT_SMURF_FAILURE : 'PUT_SMURF_FAILURE',
-  // delete
+  /// - delete ///
   DELETE_SMURF_TRY     : 'DELETE_SMURF_TRY',
   DELETE_SMURF_SUCCESS : 'DELETE_SMURF_SUCCESS',
   DELETE_SMURF_FAILURE : 'DELETE_SMURF_FAILURE',
 };
 
 /*--------------------------------------
-  actions / make, makers
+  actions / make, basics
 --------------------------------------*/
 const make = (type, data) => ({ type, data });
 
-export const makers = Object.fromEntries (
+export const basics = Object.fromEntries (
   Object.keys (types).map ((name) => [
     name, (...args) => make (name, ...args)
   ])
@@ -140,6 +143,6 @@ specials.deleteSmurf = () => (dispatch, getState) => {
 
 export default {
   types,
-  makers,
+  basics,
   specials,
 };
